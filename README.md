@@ -15,7 +15,7 @@ EXEMPLE
 [X] Sprite MC
 [X] Background ciel
 [] sol roche
-[] sol terre
+[X] sol terre
 [] sol "nuage"
 []echelle
 [] pnj lore
