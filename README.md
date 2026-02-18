@@ -10,3 +10,12 @@ EXEMPLE
 
               ___________________
                 Probleme rencontre et si tu as résolutions
+
+--tache---
+[X] Sprite MC
+[X] Background ciel
+[] sol roche
+[] sol terre
+[] sol "nuage"
+[]echelle
+[] pnj lore
