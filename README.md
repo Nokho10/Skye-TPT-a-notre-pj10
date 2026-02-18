@@ -14,8 +14,8 @@ EXEMPLE
 --tache---
 [X] Sprite MC
 [X] Background ciel
-[] sol roche
+[X] sol roche
 [X] sol terre
 [] sol "nuage"
-[]echelle
+[X]echelle
 [] pnj lore
