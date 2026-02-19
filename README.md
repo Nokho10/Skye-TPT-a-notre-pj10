@@ -19,3 +19,4 @@ EXEMPLE
 [] sol "nuage"
 [X]echelle
 [] pnj lore
+[X]crée les doss frame MC
