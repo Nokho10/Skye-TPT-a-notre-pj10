@@ -20,3 +20,37 @@ EXEMPLE
 [X]echelle
 [] pnj lore
 [X]crée les doss frame MC
+--------------------------------------
+
+code_______
+// se code est a mettre dans event  Create
+move_speed = 4;
+jump_force = -10;
+grav = 0.5;
+vsp = 0;
+
+
+// Déplacement gauche / droite
+var move = keyboard_check(vk_right) - keyboard_check(vk_left);
+x += move * move_speed;
+
+
+// Gravité
+vsp += grav;
+y += vsp;
+
+// Collision sol (remplace obj_sol par ton objet sol)
+if (place_meeting(x, y + 1, obj_sol))
+{
+    while (!place_meeting(x, y, obj_sol))
+    {
+        y += 1;
+    }
+    vsp = 0;
+
+    // Saut seulement si au sol
+    if (keyboard_check_pressed(vk_space))
+    {
+        vsp = jump_force;
+    }
+}
