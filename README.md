@@ -23,34 +23,65 @@ EXEMPLE
 --------------------------------------
 
 code_______
-// se code est a mettre dans event  Create
-move_speed = 4;
-jump_force = -10;
-grav = 0.5;
+// a mettre dans Event ->create
+hsp = 0;
 vsp = 0;
 
+walk_speed = 4;
+grav = 0.5;
+jump_power = -10;
 
-// Déplacement gauche / droite
-var move = keyboard_check(vk_right) - keyboard_check(vk_left);
-x += move * move_speed;
+// ----- INPUT GAUCHE / DROITE -----
+hsp = 0;
 
-
-// Gravité
-vsp += grav;
-y += vsp;
-
-// Collision sol (remplace obj_sol par ton objet sol)
-if (place_meeting(x, y + 1, obj_sol))
+if (keyboard_check(ord("Q")))
 {
-    while (!place_meeting(x, y, obj_sol))
+    hsp = -walk_speed;
+}
+
+if (keyboard_check(ord("D")))
+{
+    hsp = walk_speed;
+}
+
+
+// ----- COLLISION HORIZONTALE -----
+if (place_meeting(x + hsp, y, obj_sol))
+{
+    while (!place_meeting(x + sign(hsp), y, obj_sol))
     {
-        y += 1;
+        x += sign(hsp);
+    }
+    hsp = 0;
+}
+
+x += hsp;
+
+
+// ----- GRAVITÉ -----
+vsp += grav;
+
+
+// ----- SAUT -----
+if (keyboard_check_pressed(vk_space))
+{
+    if (place_meeting(x, y + 1, obj_sol))
+    {
+        vsp = jump_power;
+    }
+}
+
+
+// ----- COLLISION VERTICALE -----
+if (place_meeting(x, y + vsp, obj_sol))
+{
+    while (!place_meeting(x, y + sign(vsp), obj_sol))
+    {
+        y += sign(vsp);
     }
     vsp = 0;
-
-    // Saut seulement si au sol
-    if (keyboard_check_pressed(vk_space))
-    {
-        vsp = jump_force;
-    }
+}
+else
+{
+    y += vsp;
 }
