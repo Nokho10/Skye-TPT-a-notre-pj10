@@ -93,40 +93,40 @@ else
 
 
 ----code brouillon------
-✅ 1️⃣ Dans le Create Event du joueur
+//✅ 1️⃣ Dans le Create Event du joueur
 
-Ajoute ça :
+//Ajoute ça :
 
 max_hp = 100;
 hp = max_hp;
-✅ 2️⃣ Pour perdre de la vie (exemple)
+//✅ 2️⃣ Pour perdre de la vie (exemple)
 
-Par exemple si tu touches un ennemi :
+//Par exemple si tu touches un ennemi :
 
 hp -= 10;
 
-Si tu veux tester vite fait, mets dans Step :
+//Si tu veux tester vite fait, mets dans Step :
 
 if (keyboard_check_pressed(ord("H")))
 {
     hp -= 10;
 }
 
-Appuie sur H → tu perds 10 HP.
+//Appuie sur H → tu perds 10 HP.
 
-✅ 3️⃣ Empêcher les HP négatifs
+//✅ 3️⃣ Empêcher les HP négatifs
 
-Toujours dans Step :
+//Toujours dans Step :
 
 if (hp < 0)
 {
     hp = 0;
 }
-✅ 4️⃣ Afficher une barre de vie
+//✅ 4️⃣ Afficher une barre de vie
 
-Ajoute un Draw GUI Event à obj_player.
+//Ajoute un Draw GUI Event à obj_player.
 
-Mets ça dedans :
+//Mets ça dedans :
 
 // Fond de barre
 draw_set_color(c_black);
@@ -141,8 +141,8 @@ draw_rectangle(20, 20, 20 + (200 * hp_ratio), 40, false);
 // Texte
 draw_set_color(c_white);
 draw_text(25, 22, "HP: " + string(hp));
-🎯 Résultat
-
+//🎯 Résultat
+-------------------
 ✔ Barre noire = fond
 ✔ Rouge = vie actuelle
 ✔ Texte HP
