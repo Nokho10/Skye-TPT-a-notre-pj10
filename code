@@ -1,1 +1,84 @@
 Mets ton code la
+Le code pour le joueur :
+
+
+-----------------------------------------------------------------------
+Create :
+
+
+// ============================================================
+// MOUVEMENT (ton code)
+// ============================================================
+hsp = 0;         // vitesse horizontale
+vsp = 0;         // vitesse verticale
+
+walk_speed = 4;   // vitesse de marche
+grav = 0.5;       // gravité
+jump_power = -10; // force de saut
+facing = 1; // 1 = droite, -1 = gauche
+max_hp = 100;
+hp = max_hp;
+// ============================================================
+// SPRITESHEET (un seul sprite avec toutes les frames)
+// ============================================================
+sprite_index = spr_player_run_r; // ton spritesheet découpé dans GMS
+image_speed = 0;                 // on contrôle l'animation à la main
+image_index = 0;
+
+
+
+-----------------------------------------------------------------------
+
+
+Step :
+
+
+// ============================================================
+// MOUVEMENT (ton code)
+// ============================================================
+hsp = 0;         // vitesse horizontale
+vsp = 0;         // vitesse verticale
+
+walk_speed = 4;   // vitesse de marche
+grav = 0.5;       // gravité
+jump_power = -10; // force de saut
+facing = 1; // 1 = droite, -1 = gauche
+max_hp = 100;
+hp = max_hp;
+// ============================================================
+// SPRITESHEET (un seul sprite avec toutes les frames)
+// ============================================================
+sprite_index = spr_player_run_r; // ton spritesheet découpé dans GMS
+image_speed = 0;                 // on contrôle l'animation à la main
+image_index = 0;
+-----------------------------------------------------------------------
+
+
+Draw gui : 
+
+
+// Fond de barre
+draw_set_color(c_black);
+draw_rectangle(20, 20, 220, 40, false);
+
+// Barre rouge
+var hp_ratio = hp / max_hp;
+
+draw_set_color(c_red);
+draw_rectangle(20, 20, 20 + (200 * hp_ratio), 40, false);
+
+// Texte
+draw_set_color(c_white);
+draw_text(25, 22, "HP: " + string(hp));
+-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
