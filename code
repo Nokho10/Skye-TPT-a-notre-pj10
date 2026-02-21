@@ -71,7 +71,92 @@ draw_rectangle(20, 20, 20 + (200 * hp_ratio), 40, false);
 draw_set_color(c_white);
 draw_text(25, 22, "HP: " + string(hp));
 -----------------------------------------------------------------------
+        Version améliore reste plus que a incorpe ton code pour le changement de frame et le GUI bare de vide
 
+// =============================
+// INPUT GAUCHE / DROITE
+// =============================
+
+hsp = 0;
+
+if (keyboard_check(ord("Q")))
+{
+    hsp = -walk_speed;
+}
+
+if (keyboard_check(ord("D")))
+{
+    hsp = walk_speed;
+}
+
+
+// =============================
+// COLLISION HORIZONTALE
+// =============================
+
+if (place_meeting(x + hsp, y, obj_sol))
+{
+    while (!place_meeting(x + sign(hsp), y, obj_sol))
+    {
+        x += sign(hsp);
+    }
+    hsp = 0;
+}
+
+x += hsp;
+
+
+// =============================
+// GRAVITÉ
+// =============================
+
+vsp += grav;
+
+
+// =============================
+// SAUT
+// =============================
+
+if (keyboard_check_pressed(vk_space))
+{
+    if (place_meeting(x, y + 1, obj_sol))
+    {
+        vsp = jump_power;
+    }
+}
+
+
+// =============================
+// COLLISION VERTICALE
+// =============================
+
+if (place_meeting(x, y + vsp, obj_sol))
+{
+    while (!place_meeting(x, y + sign(vsp), obj_sol))
+    {
+        y += sign(vsp);
+    }
+
+    vsp = 0;
+}
+else
+{
+    y += vsp;
+}
+
+
+// =============================
+// MORT (obj_kill)
+// =============================
+
+if (place_meeting(x, y, obj_kill))
+{
+    x = spawn_x;
+    y = spawn_y - sprite_height;
+
+    hsp = 0;
+    vsp = 0;
+}
 
 
 
