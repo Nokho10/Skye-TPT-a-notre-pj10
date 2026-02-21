@@ -30,6 +30,7 @@ vsp = 0;
 walk_speed = 4;
 grav = 0.5;
 jump_power = -10;
+//a mettre dans Event step du player
 
 // ----- INPUT GAUCHE / DROITE -----
 hsp = 0;
