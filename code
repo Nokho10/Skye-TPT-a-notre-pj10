@@ -1,7 +1,7 @@
 Mets ton code la
 Le code pour le joueur :
 Ce code permet au joueur de pouvoir aller a gauche et a droite et de pouvoir sauter, pour l'instant les animations de marche et de idle sont presentes
-de plus, le code dispose aussi d'un système de bar de vie mais juste graphique pas encore fonctionnel.
+de plus, le code dispose aussi d'un système de bar de vie mais quasiment fonctionnel si on appuis sur H cela fais perdre de la vie dans la bar de vie.
 
 -----------------------------------------------------------------------
 Create :
