@@ -93,13 +93,13 @@ else
 
 
 ----code brouillon------
-//✅ 1️⃣ Dans le Create Event du joueur
+//1️⃣ Dans le Create Event du joueur
 
 //Ajoute ça :
 
 max_hp = 100;
 hp = max_hp;
-//✅ 2️⃣ Pour perdre de la vie (exemple)
+//2️⃣ Pour perdre de la vie (exemple)
 
 //Par exemple si tu touches un ennemi :
 
@@ -114,7 +114,7 @@ if (keyboard_check_pressed(ord("H")))
 
 //Appuie sur H → tu perds 10 HP.
 
-//✅ 3️⃣ Empêcher les HP négatifs
+//3️⃣ Empêcher les HP négatifs
 
 //Toujours dans Step :
 
@@ -122,7 +122,7 @@ if (hp < 0)
 {
     hp = 0;
 }
-//✅ 4️⃣ Afficher une barre de vie
+//4️⃣ Afficher une barre de vie
 
 //Ajoute un Draw GUI Event à obj_player.
 
@@ -156,3 +156,6 @@ if (hp <= 0)
     show_message("GAME OVER");
     instance_destroy();
 }
+
+
+// retire l option touche H car ses pas l objectif final de la garde je te laisse aussi le plaisir de trouve un asset avec animations pour un mob teste
