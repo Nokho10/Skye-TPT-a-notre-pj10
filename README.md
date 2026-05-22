@@ -10,6 +10,7 @@ EXEMPLE
 
               ___________________
                 Probleme rencontre et si tu as résolutions
+                Fait gaffe Rayane, il ya des erreurs sur l'animation pour le perso teste quand le perso est afk c'est ok mais les mouvement son immonde faudra voc pour corriger sa ensemble .ps je commence a me renseigner sur le sujet
 
 --tache---
 [X] Sprite MC
