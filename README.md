@@ -94,13 +94,13 @@ else
 
 
 ----code brouillon------
-//✅ 1️⃣ Dans le Create Event du joueur
+// Dans le Create Event du joueur
 
 //Ajoute ça :
 
 max_hp = 100;
 hp = max_hp;
-//✅ 2️⃣ Pour perdre de la vie (exemple)
+// Pour perdre de la vie (exemple)
 
 //Par exemple si tu touches un ennemi :
 
@@ -115,7 +115,7 @@ if (keyboard_check_pressed(ord("H")))
 
 //Appuie sur H → tu perds 10 HP.
 
-//✅ 3️⃣ Empêcher les HP négatifs
+// Empêcher les HP négatifs
 
 //Toujours dans Step :
 
@@ -123,7 +123,7 @@ if (hp < 0)
 {
     hp = 0;
 }
-//✅ 4️⃣ Afficher une barre de vie
+// Afficher une barre de vie
 
 //Ajoute un Draw GUI Event à obj_player.
 
@@ -142,13 +142,6 @@ draw_rectangle(20, 20, 20 + (200 * hp_ratio), 40, false);
 // Texte
 draw_set_color(c_white);
 draw_text(25, 22, "HP: " + string(hp));
-//🎯 Résultat
--------------------
-✔ Barre noire = fond
-✔ Rouge = vie actuelle
-✔ Texte HP
-
-💡 Si tu veux que le joueur meure
 
 Ajoute dans Step :
 
@@ -157,3 +150,4 @@ if (hp <= 0)
     show_message("GAME OVER");
     instance_destroy();
 }
+//fait gaffe Rayane il ya des erreurs sur l'animation du teste du sprite pour els mouvement idle et mouvement
